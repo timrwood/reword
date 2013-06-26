@@ -36,7 +36,7 @@
 		}
 		var g = document.createElement('script'),
 			s = document.scripts[0];
-		g.src = 'http://rawgithub.com/timrwood/reword/master/data.js';
+		g.src = '//rawgithub.com/timrwood/reword/master/data.js';
 		s.parentNode.insertBefore(g, s);
 		didLoad = true;
 	}
