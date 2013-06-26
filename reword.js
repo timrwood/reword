@@ -41,14 +41,42 @@
 		didLoad = true;
 	}
 
+	function matchCapitol (a, b) {
+		var i,
+			str = b.split('');
+		for (i = 0; i < a.length; i++) {
+			if (a[i].toUpperCase() === a[i]) {
+				str[i] = str[i].toUpperCase();
+			}
+		}
+		return str.join('');
+	}
+
+	function replace (word) {
+		var first = word[0].toLowerCase(),
+			last = word[word.length - 1].toLowerCase(),
+			key = first + last,
+			len = word.length - 2,
+			words, index, newWord;
+
+		if (!data[key] || !data[key][len - 1]) {
+			return word;
+		}
+
+		words = data[key][len - 1];
+		index = Math.floor(Math.random() * (words.length / len)) * len;
+		newWord = first + words.substr(index, len) + last;
+
+		return matchCapitol(word, newWord);
+	}
+
 	function reword () {
 		if (!data) {
 			return;
 		}
 
 		walk(document.body, function (node) {
-			var text = node.nodeValue;
-			console.log(text);
+			node.nodeValue = node.nodeValue.replace(/[a-z]{3,100}/gi, replace);
 		});
 	}
 
