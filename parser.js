@@ -26,4 +26,4 @@ words.forEach(function (word) {
 	output[key][len] += middle;
 });
 
-fs.writeFileSync('data.json', JSON.stringify(output, null, 1));
+fs.writeFileSync('data.js', 'reword.load(' + JSON.stringify(output, null, 1) + ')');

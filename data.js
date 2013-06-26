@@ -1,4 +1,4 @@
-{
+reword.load({
  "al": [
   "ailw",
   "becygaiekamimynaniouriryvawoxaxexi",
@@ -9014,4 +9014,4 @@
   "iz",
   "mud"
  ]
-}
+})
