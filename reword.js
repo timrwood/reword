@@ -59,7 +59,7 @@
 			len = word.length - 2,
 			words, index, newWord;
 
-		if (!data[key] || !data[key][len - 1]) {
+		if (!data[key] || !data[key][len - 1] || Math.random() < 0.25) {
 			return word;
 		}
 
