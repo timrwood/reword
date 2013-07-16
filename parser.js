@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var words = fs.readFileSync('/usr/share/dict/words', 'utf8').split('\n');
+var words = fs.readFileSync('./words.txt', 'utf8').split('\n');
 
 var output = {};
 
